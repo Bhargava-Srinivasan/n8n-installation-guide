@@ -14,7 +14,7 @@ Before start the installation process, make sure you meet the following prerequi
 
 ---
 
-## 🐳 Step-by-Step Docker Installation and Setup for n8n on Ubuntu (WSL)
+## 🐳 Step-by-Step Docker Installation and Setup
 
 ### 🔹 Step 1: Install Docker on Ubuntu (WSL)
 
@@ -66,22 +66,26 @@ Access Ubuntu again. Check if Docker was installed correctly on the Ubuntu termi
 ```bash
 docker --version
 ```
-You should see something like Docker version 24.0.2, build cb74dfc.
+You should see something like ```Docker version 24.0.2, build cb74dfc```.
 
-━━━━━━━━━━━━━━━━━━━━━━━━
+--
 
 ### 🔹 Step 3: Start up Docker
 
 #### 🅰️ Option 1: Start/Stop Docker Manually (No systemd required)
 To start the Docker service run the following on the Ubuntu terminal:
+
+
 ```bash
 sudo service docker start
 ```
+⚠️ Warning: This command has to be run everytime you start the WSL instance.
 
 To stop the Docker service run the following on the Ubuntu terminal:
 ```bash
 sudo service docker stop
 ```
+<hr style="border:2px solid gray; margin: 1em 0;">
 
 #### 🅱️ Option 2 (✅Recommended): Enable Docker to Start Automatically on WSL Startup (with systemd)
 
@@ -97,13 +101,9 @@ ps -p 1 -o comm=
 ```
 You should see an output ```systemd``` if enabled
 
-⚠️ Warning: On WSL 2, systemctl will not work unless you have explicitly enabled systemd support via .wslconfig or tools like genie, wsl-conf, or systemd-launcher. By default, most WSL distributions do not start with systemd.
+❗ Note: On WSL 2, systemctl will not work unless you have explicitly enabled systemd support via .wslconfig or tools like genie, wsl-conf, or systemd-launcher. By default, most WSL distributions do not start with systemd.
 
-### 🛠️ Setup Checklist
-
-- [x] Installed Ubuntu
-- [x] Installed Docker Engine
-- [ ] Verified systemd status
+<img src="https://raw.githubusercontent.com/n8n-io/n8n/master/assets/images/n8n-logo.png" alt="n8n logo" width="24" style="vertical-align: middle;"/> Step-by-Step n8n Installation and Setup via Docker
 
 
 
