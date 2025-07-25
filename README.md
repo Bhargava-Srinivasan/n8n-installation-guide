@@ -171,6 +171,8 @@ docker start n8n
 docker stop n8n
 ```
 
+🔗 The n8n UI will be available at: http://localhost:5678
+
 ❌ If you wish to remove the container entirely, run the following:
 ```bash
 docker rm -f n8n
