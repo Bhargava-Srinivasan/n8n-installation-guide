@@ -47,7 +47,6 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docke
 ```bash
 sudo apt update
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-sudo usermod -aG docker $USER
 ```
 #### 6️⃣ Add user to Docker Group:
 Add your user to the Docker group to avoid the need to use sudo on every Docker command:
