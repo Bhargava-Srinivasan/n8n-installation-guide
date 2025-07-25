@@ -14,10 +14,14 @@ Make sure you have the following installed:
 
 ---
 
-## 🐳 Step-by-Step Docker Installation for n8n
+## 🐳 Step-by-Step Docker Installation and Setup for n8n on Ubuntu (WSL)
 
-### 🔹 Step 1: Open your Ubuntu WSL terminal
+### 🔹 Step 1: Install Docker on Ubuntu (WSL)
+
+If you haven’t installed Docker on your WSL Ubuntu environment, follow these steps:
+
+#### 1️⃣ Update your package index:
 
 ```bash
-cd ~
+sudo apt update
 
