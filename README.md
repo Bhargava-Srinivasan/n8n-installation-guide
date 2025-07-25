@@ -2,7 +2,7 @@
 
 **n8n** (short for *"nodemation"*) is a powerful open-source workflow automation tool that lets you connect different apps and services using a visual interface. It enables you to automate repetitive tasks, build custom integrations, and manage complex data flows — all without writing much code.  
 
-This guide walks you through installing and running [n8n](https://n8n.io/) using Docker on a WSL2 Ubuntu environment.
+This guide walks you through installing and running [n8n](https://n8n.io/) using Docker on a WSL Ubuntu environment.
 
 ---
 
