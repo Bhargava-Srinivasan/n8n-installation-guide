@@ -103,7 +103,10 @@ You should see an output ```systemd``` if enabled
 
 ❗ Note: On WSL 2, systemctl will not work unless you have explicitly enabled systemd support via .wslconfig or tools like genie, wsl-conf, or systemd-launcher. By default, most WSL distributions do not start with systemd.
 
-<img src="https://raw.githubusercontent.com/n8n-io/n8n/master/assets/images/n8n-logo.png" alt="n8n logo" width="24" style="vertical-align: middle;"/> Step-by-Step n8n Installation and Setup via Docker
+---
+
+## <img src="n8n-logo.png" alt="n8n logo" width="28" /> Step-by-Step n8n Installation and Setup via Docker
+
 
 
 
