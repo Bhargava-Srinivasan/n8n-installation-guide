@@ -9,8 +9,8 @@ This guide walks you through installing and running [n8n](https://n8n.io/) using
 Before start the installation process, make sure you meet the following prerequisites:
 
 - A Windows 10 operating system or higher with WSL support.
+- WSL enabled with Ubuntu (e.g., Ubuntu 22.04)
 - Docker engine in WSL
-- WSL enabled with Ubuntu (e.g., Ubuntu 20.04 or 22.04)
 
 ---
 
@@ -52,7 +52,7 @@ Add your user to the Docker group to avoid the need to use sudo on every Docker 
 ```bash
 sudo usermod -aG docker $USER
 ```
---
+<br>
 
 ### 🔹 Step 2: Verify Docker installation
 
@@ -68,7 +68,7 @@ docker --version
 ```
 You should see something like ```Docker version 24.0.2, build cb74dfc```.
 
---
+<br>
 
 ### 🔹 Step 3: Start up Docker
 
@@ -105,7 +105,88 @@ You should see an output ```systemd``` if enabled
 
 ---
 
-## <img src="n8n-logo.png" alt="n8n logo" width="32" style="vertical-align: bottom;"/> Step-by-Step n8n Installation and Setup via Docker
+
+## <img src="n8n-logo.png" alt="n8n logo" width="32" style="vertical-align: bottom;"/> Step-by-Step n8n Installation via Docker
+
+### 🔹 Step 1: Pull the n8n Docker Image and create a directory
+
+Pull the image:
+```bash
+docker pull n8nio/n8n
+```
+
+Create a directory to store n8n's data (configs, workflows, DB):
+```bash
+mkdir -p ~/.n8n
+```
+<br>
+
+### 🔹 Step 2: Start the n8n container
+
+#### 🅰️ Option 1: Run Temporary Container
+This method will start the container and automatically delete it when you close the terminal.
+
+
+```bash
+docker run -it --rm -p 5678:5678 -v ~/.n8n:/home/node/.n8n n8nio/n8n
+```
+🔗 The n8n UI will be available at: http://localhost:5678
+
+💡 Once you close the terminal, the container is stopped and removed.
+
+<hr style="border:2px solid gray; margin: 1em 0;">
+
+#### 🅱️ Option 2: Run Persistent Container
+This method allows you to retain the container and reuse it easily.
+
+#### 🟢 Detached Mode (✅Recommended)
+```bash
+docker run -d --name n8n -p 5678:5678 -v ~/.n8n:/home/node/.n8n n8nio/n8n
+```
+
+#### 💬 Interactive Mode
+```bash
+docker run -it --name n8n -p 5678:5678 -v ~/.n8n:/home/node/.n8n n8nio/n8n
+```
+
+▶️ Start the container anytime:
+```bash
+docker start n8n
+```
+
+🛑 Stop the container to save RAM and CPU:
+```bash
+docker stop n8n
+```
+
+❌ If you wish to remove the container entirely, run the following:
+```bash
+docker rm -f n8n
+```
+
+🔗 Access the n8n UI at: http://localhost:5678
+
+---
+
+<br>
+
+## ⚙️ Understanding Docker Run Modes
+
+📊 Why Detached Mode is Better for Most Use Cases
+| ✅ Advantage             | 💡 Why It Matters for n8n                                       |
+| ----------------------- | --------------------------------------------------------------- |
+| 1️⃣ Runs in background  | n8n is a background service — keep your terminal free           |
+| 2️⃣ Survives SSH/logout | Container continues running even if terminal/SSH session closes |
+| 3️⃣ Clean management    | Easily start/stop with `docker start/stop n8n`                  |
+| 4️⃣ Better stability    | No accidental shutdowns from terminal closure                   |
+
+<br>
+
+🧪 Use Interactive Mode only in these edge cases:
+
+- Debugging startup errors
+- Testing configuration changes
+- Developing custom n8n Docker images
 
 
 
