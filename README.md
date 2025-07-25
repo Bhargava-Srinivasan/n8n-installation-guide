@@ -16,7 +16,7 @@ Before start the installation process, make sure you meet the following prerequi
 
 ## 🐳 Step-by-Step Docker Installation and Setup for n8n on Ubuntu (WSL)
 
-## 🔹 Step 1: Install Docker on Ubuntu (WSL)
+### 🔹 Step 1: Install Docker on Ubuntu (WSL)
 
 If you haven’t installed Docker on your WSL Ubuntu environment, follow these steps:
 
@@ -52,8 +52,9 @@ Add your user to the Docker group to avoid the need to use sudo on every Docker 
 ```bash
 sudo usermod -aG docker $USER
 ```
+--
 
-## 🔹 Step 2: Verify Docker installation
+### 🔹 Step 2: Verify Docker installation
 
 Close the open terminal on Ubuntu.
 Restart WSL via the Windows command line (Powershell).
@@ -67,8 +68,11 @@ docker --version
 ```
 You should see something like Docker version 24.0.2, build cb74dfc.
 
-## 🔹 Step 3: Start up Docker
+━━━━━━━━━━━━━━━━━━━━━━━━
 
+### 🔹 Step 3: Start up Docker
+
+#### 🅰️ Option 1: Start/Stop Docker Manually (No systemd required)
 To start the Docker service run the following on the Ubuntu terminal:
 ```bash
 sudo service docker start
@@ -79,14 +83,27 @@ To stop the Docker service run the following on the Ubuntu terminal:
 sudo service docker stop
 ```
 
-Starts Docker service and enables it to start automatically on WSL Startup (recommended):
+#### 🅱️ Option 2 (✅Recommended): Enable Docker to Start Automatically on WSL Startup (with systemd)
+
 ```bash
 sudo systemctl start docker
 sudo systemctl enable docker
 ```
+ℹ️ This will start the Docker daemon now and ensure it starts automatically every time your WSL instance boots (only if systemd is enabled).
 
+To check whether systemd is enabled in your WSL instance run the following command: 
+```bash
+ps -p 1 -o comm=
+```
+You should see an output ```systemd``` if enabled
 
+⚠️ Warning: On WSL 2, systemctl will not work unless you have explicitly enabled systemd support via .wslconfig or tools like genie, wsl-conf, or systemd-launcher. By default, most WSL distributions do not start with systemd.
 
+### 🛠️ Setup Checklist
+
+- [x] Installed Ubuntu
+- [x] Installed Docker Engine
+- [ ] Verified systemd status
 
 
 
