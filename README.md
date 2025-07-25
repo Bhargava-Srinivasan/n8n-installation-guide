@@ -159,6 +159,7 @@ docker run -d --name n8n -p 5678:5678 -v ~/.n8n:/home/node/.n8n n8nio/n8n
 ```
 
 The container can be started and stopped anytime even after system reboot for easy access using the following two commands.
+
 💡 Once you close the terminal, the container is neither stopped nor deleted, unless explicitly done so by following commands.
 
 ▶️ Start the container:
