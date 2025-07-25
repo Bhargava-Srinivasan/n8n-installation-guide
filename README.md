@@ -107,8 +107,10 @@ You should see an output ```systemd``` if enabled
 
 ---
 
+<br>
 
 ## <img src="n8n-logo.png" alt="n8n logo" width="32" style="vertical-align: bottom;"/> Step-by-Step n8n Installation via Docker
+
 
 ### 🔹 Step 1: Pull the n8n Docker Image and create a directory
 
@@ -139,13 +141,16 @@ docker run -it --rm -p 5678:5678 -v ~/.n8n:/home/node/.n8n n8nio/n8n
 <hr style="border:2px solid gray; margin: 1em 0;">
 
 #### 🅱️ Option 2: Run Persistent Container
-This method allows you to retain the container and reuse it easily.
+This method allows you to retain the container and reuse it easily. It can be run in either of the following modes:
 
 #### 💬 Interactive Mode
 ```bash
 docker run -it --name n8n -p 5678:5678 -v ~/.n8n:/home/node/.n8n n8nio/n8n
 ```
+🔗 The n8n UI will be available at: http://localhost:5678
+
 💡 Once you close the terminal, the container is stopped but not deleted.
+
 <br>
 
 #### 🟢 Detached Mode (✅Recommended)
@@ -153,7 +158,10 @@ docker run -it --name n8n -p 5678:5678 -v ~/.n8n:/home/node/.n8n n8nio/n8n
 docker run -d --name n8n -p 5678:5678 -v ~/.n8n:/home/node/.n8n n8nio/n8n
 ```
 
-▶️ Start the container anytime:
+The container can be started and stopped anytime even after system reboot for easy access using the following two commands.
+💡 Once you close the terminal, the container is neither stopped nor deleted, unless explicitly done so by following commands.
+
+▶️ Start the container:
 ```bash
 docker start n8n
 ```
@@ -168,7 +176,7 @@ docker stop n8n
 docker rm -f n8n
 ```
 
-🔗 Access the n8n UI at: http://localhost:5678
+🔗 The n8n UI will be available at: http://localhost:5678
 
 ---
 
@@ -176,7 +184,7 @@ docker rm -f n8n
 
 ## ⚙️ Understanding Docker Run Modes
 
-📊 Why Detached Mode is Better for Most Use Cases
+Why Detached Mode is Better for Most Use Cases
 | ✅ Advantage             | 💡 Why It Matters for n8n                                       |
 | ----------------------- | --------------------------------------------------------------- |
 | 1️⃣ Runs in background  | n8n is a background service — keep your terminal free           |
@@ -186,7 +194,7 @@ docker rm -f n8n
 
 <br>
 
-🧪 Use Interactive Mode only in these edge cases:
+Use Interactive Mode only in these edge cases:
 
 - Debugging startup errors
 - Testing configuration changes
