@@ -9,14 +9,14 @@ This guide walks you through installing and running [n8n](https://n8n.io/) using
 Before start the installation process, make sure you meet the following prerequisites:
 
 - A Windows 10 operating system or higher with WSL support.
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (Ensure WSL integration is enabled)
+- Docker engine in WSL
 - WSL enabled with Ubuntu (e.g., Ubuntu 20.04 or 22.04)
 
 ---
 
 ## 🐳 Step-by-Step Docker Installation and Setup for n8n on Ubuntu (WSL)
 
-### 🔹 Step 1: Install Docker on Ubuntu (WSL)
+## 🔹 Step 1: Install Docker on Ubuntu (WSL)
 
 If you haven’t installed Docker on your WSL Ubuntu environment, follow these steps:
 
@@ -53,7 +53,7 @@ Add your user to the Docker group to avoid the need to use sudo on every Docker 
 sudo usermod -aG docker $USER
 ```
 
-### 🔹 Step 2: Verify Docker installation
+## 🔹 Step 2: Verify Docker installation
 
 Close the open terminal on Ubuntu.
 Restart WSL via the Windows command line (Powershell).
@@ -67,7 +67,7 @@ docker --version
 ```
 You should see something like Docker version 24.0.2, build cb74dfc.
 
-### 🔹 Step 3: Start up Docker
+## 🔹 Step 3: Start up Docker
 
 To start the Docker service run the following on the Ubuntu terminal:
 ```bash
