@@ -134,21 +134,23 @@ docker run -it --rm -p 5678:5678 -v ~/.n8n:/home/node/.n8n n8nio/n8n
 ```
 🔗 The n8n UI will be available at: http://localhost:5678
 
-💡 Once you close the terminal, the container is stopped and removed.
+💡 Once you close the terminal, the container is stopped and deleted.
 
 <hr style="border:2px solid gray; margin: 1em 0;">
 
 #### 🅱️ Option 2: Run Persistent Container
 This method allows you to retain the container and reuse it easily.
 
-#### 🟢 Detached Mode (✅Recommended)
-```bash
-docker run -d --name n8n -p 5678:5678 -v ~/.n8n:/home/node/.n8n n8nio/n8n
-```
-
 #### 💬 Interactive Mode
 ```bash
 docker run -it --name n8n -p 5678:5678 -v ~/.n8n:/home/node/.n8n n8nio/n8n
+```
+💡 Once you close the terminal, the container is stopped but not deleted.
+<br>
+
+#### 🟢 Detached Mode (✅Recommended)
+```bash
+docker run -d --name n8n -p 5678:5678 -v ~/.n8n:/home/node/.n8n n8nio/n8n
 ```
 
 ▶️ Start the container anytime:
