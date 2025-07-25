@@ -105,7 +105,7 @@ You should see an output ```systemd``` if enabled
 
 ---
 
-## <img src="n8n-logo.png" alt="n8n logo" width="28" /> Step-by-Step n8n Installation and Setup via Docker
+## <img src="n8n-logo.png" alt="n8n logo" width="32" style="vertical-align: bottom;"/> Step-by-Step n8n Installation and Setup via Docker
 
 
 
