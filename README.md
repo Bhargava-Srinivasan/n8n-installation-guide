@@ -185,7 +185,7 @@ docker rm -f n8n
 ## ⚙️ Understanding Docker Run Modes
 
 Why Detached Mode is Better for Most Use Cases
-| ✅ Advantage             | 💡 Why It Matters for n8n                                       |
+| Advantage             | Why It Matters for n8n                                       |
 | ----------------------- | --------------------------------------------------------------- |
 | Runs in background  | n8n is a background service — keep your terminal free           |
 | Survives SSH/logout | Container continues running even if terminal/SSH session closes |
