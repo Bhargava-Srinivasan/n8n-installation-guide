@@ -200,6 +200,32 @@ Use Interactive Mode only in these edge cases:
 - Testing configuration changes
 - Developing custom n8n Docker images
 
+---
+
+<br>
+
+## ☁️ Self-Hosted vs n8n Cloud 
+
+Now that n8n is self-hosted via Docker, you can perform nearly all operations with a few limitations.
+
+✅ What You Can Do on Self-Hosted n8n: <br>
+✔️ Create and manage workflows <br>
+✔️ Use most built-in nodes (APIs, webhooks, triggers, functions, etc.) <br>
+✔️ Store and run your workflows locally <br>
+✔️ Schedule tasks with Cron or time-based triggers <br>
+✔️ Use credentials securely (e.g., API keys, OAuth2) <br>
+✔️ Install custom nodes and community packages <br>
+✔️ Use n8n’s editor UI via browser (localhost:5678 by default) <br><br>
+
+⚠️ What n8n Cloud Has that Self-Hosted Does Not:
+- Built-in User Management	
+- High Availability & Auto-scaling
+- Centralized Logging/Monitoring
+- Managed Backups & Updates
+- Serverless Webhook URLs
+- Team Collaboration Features
+
+
 
 
 
